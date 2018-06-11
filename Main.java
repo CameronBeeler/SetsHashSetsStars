@@ -57,6 +57,7 @@ public class Main {
 
         solarSystem.put("Earth",    new HeavenlyBody("Earth",       365));
         solarSystem.get("Earth").AddMoon(new HeavenlyBody("Moon", 28));
+        solarSystem.get("Earth").AddMoon(new HeavenlyBody("Moon", 28));
 
         solarSystem.put("Mars",     new HeavenlyBody("Mars",        687));
         solarSystem.get("Mars").AddMoon(new HeavenlyBody("Phobos", .35));
@@ -80,6 +81,7 @@ public class Main {
 
         solarSystem.put("Neptune",  new HeavenlyBody("Neptune",     60190));
         solarSystem.get("Neptune").AddMoon(new HeavenlyBody("Triton", 5.9));
+
         HeavenlyBody.addPlanet("Earth", 385);
 
         HeavenlyBody.displayPlanets();

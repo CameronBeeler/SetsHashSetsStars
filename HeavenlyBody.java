@@ -28,6 +28,7 @@ public final class HeavenlyBody {
 
     public boolean AddMoon(HeavenlyBody moon){
         if(this.satelites.contains(moon)){
+            System.out.println("duplicate moon attempted");
            return false;
         }
         return (this.satelites.add(moon));
@@ -43,6 +44,22 @@ public final class HeavenlyBody {
         return "Body: " + name + ", Orbital Period: " + orbitalPeriod + "\n\r";
     }
 
+    @Override
+    public boolean equals(Object obj ){
+
+        if(this == obj){ return true;} //same literal object
+        if ((obj == null) || this.getClass() != obj.getClass()){return false;} // null or not the same class type
+
+        String objName = ((HeavenlyBody) obj).getName();
+        return this.name.equalsIgnoreCase(objName);
+
+    }
+
+    @Override
+    public int hashCode() {
+        //return Objects.hash(name, orbitalPeriod, satelites);
+        return Objects.hash(name.toLowerCase(), satelites);
+    }
 
     public static boolean isEqual(String planet){
         if(planets.contains(planet)){
@@ -66,4 +83,6 @@ public final class HeavenlyBody {
 //        }
       //  satelites.forEach(satelite -> System.out.println("planet Name -> " + satelite));
     }
+
+
 }
