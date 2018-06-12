@@ -45,7 +45,7 @@ public final class HeavenlyBody {
     }
 
     @Override
-    public boolean equals(Object obj ){
+    final public boolean equals(Object obj ){
 
         if(this == obj){ return true;} //same literal object
         if ((obj == null) || this.getClass() != obj.getClass()){return false;} // null or not the same class type
